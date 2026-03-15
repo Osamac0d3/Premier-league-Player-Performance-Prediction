@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Player Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚽ Player Performance Prediction</h1>
+
+<form action="/predict" method="post">
+
+<label>Select Team</label>
+
+<select name="team" required>
+
+{% for t in teams %}
+<option value="{{t}}">{{t}}</option>
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<label>Select Opponent Team</label>
+
+<select name="opponent" required>
+
+{% for t in teams %}
+<option value="{{t}}">{{t}}</option>
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit" class="btn">Show Top Players</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
