@@ -1,6 +1,6 @@
 # ⚽ Player Performance Prediction Web App
 
-A **Machine Learning + Flask web application** that predicts and displays the **Top 30 football players for a match** based on predicted performance ratings.
+A **Machine Learning + Flask web application** that predicts and displays the **Top football players for a match** based on predicted performance ratings.
 Users can select a **team** and an **opponent team**, and the system returns the **best players ranked by predicted rating** along with **visual analytics dashboards**.
 
 ---
