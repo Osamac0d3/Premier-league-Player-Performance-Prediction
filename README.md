@@ -1,58 +1,65 @@
-# ⚽ Player Performance Prediction Web App
+# ⚽ Player Performance Prediction using Deep Learning
 
-A **Machine Learning + Flask web application** that predicts and displays the **Top football players for a match** based on predicted performance ratings.
-Users can select a **team** and an **opponent team**, and the system returns the **best players ranked by predicted rating** along with **visual analytics dashboards**.
+A **Deep Learning powered football analytics web application** that predicts the **Top players expected to perform best in a match** based on historical Premier League data.
 
----
-
-## 🚀 Project Overview
-
-This project uses **historical Premier League player data** to build a prediction system that estimates **player performance ratings** for a specific match.
-
-The web application allows users to:
-
-* Select two teams
-* Predict the **top 30 players** likely to perform best
-* View **interactive visualizations** of player statistics
-* Analyze player performance using **data-driven insights**
+The application allows users to select a **team** and an **opponent team**, then displays the **top ranked players** predicted by the model along with **interactive visualizations**.
 
 ---
 
-## 🧠 Machine Learning Workflow
+# 🚀 Project Overview
 
-1. **Data Collection**
+This project combines **Deep Learning, Data Science, and Web Development** to analyze football player performance.
 
-   * Premier League player data from the last **5 years**
+The system:
 
-2. **Data Preprocessing**
-
-   * Cleaning missing values
-   * Feature selection
-   * Encoding categorical features
-
-3. **Feature Engineering**
-
-   * Player match statistics
-   * Goals
-   * Assists
-   * Shots
-   * Passes completed
-   * Tackles
-   * Minutes played
-
-4. **Model Training**
-
-   * Model predicts **player rating**
-   * Used to rank players by performance
-
-5. **Deployment**
-
-   * Flask web application
-   * Interactive charts using Chart.js
+1. Uses **5 years of Premier League player data**
+2. Trains a **Deep Neural Network model**
+3. Predicts **player performance ratings**
+4. Ranks players by predicted performance
+5. Displays results in a **Flask web application**
 
 ---
 
-## 🖥️ Web Application Features
+# 🧠 Deep Learning Model
+
+The model predicts a **player match rating** using match statistics.
+
+### Input Features
+
+* Player name
+* Team
+* Opponent team
+* Minutes played
+* Goals
+* Assists
+* Shots
+* Passes completed
+* Tackles
+
+### Model Architecture
+
+```
+Input Layer
+   ↓
+Dense Layer (128 neurons, ReLU)
+   ↓
+Dense Layer (64 neurons, ReLU)
+   ↓
+Dense Layer (32 neurons, ReLU)
+   ↓
+Output Layer (Predicted Rating)
+```
+
+### Training Details
+
+* Optimizer: **Adam**
+* Loss Function: **Mean Squared Error**
+* Framework: TensorFlow / Keras
+* Validation Split: 20%
+
+---
+
+# 📊 Web Application Features
 
 ### 🔎 Team vs Team Prediction
 
@@ -61,47 +68,49 @@ Users select:
 * Team
 * Opponent Team
 
-The system displays the **Top 30 predicted players**.
-
----
-
-### 📊 Data Visualization Dashboard
-
-The results page includes interactive charts such as:
-
-* Player Goals Distribution
-* Assists Comparison
-* Minutes Played Analysis
+The system predicts the **Top 30 players likely to perform best** in the match.
 
 ---
 
 ### 📋 Player Ranking Table
 
-The system ranks players by **predicted performance rating**.
+The results page displays the **Top 30 players sorted by predicted rating**.
 
 | Rank | Player Name | Team   |
 | ---- | ----------- | ------ |
 | 1    | Player A    | Team A |
 | 2    | Player B    | Team B |
-| 3    | Player C    | Team A |
+| 3    | Player C    | Team B |
 
 ---
 
-## 🏗️ Project Structure
+### 📈 Interactive Visualizations
+
+The results page includes graphs showing:
+
+* Goals distribution
+* Assists comparison
+* Minutes played analysis
+
+Charts are built using **Chart.js**.
+
+---
+
+# 📂 Project Structure
 
 ```
-Player-Performance-Prediction/
+Player-Performance-Prediction
 │
 ├── app.py
 ├── player_data.pkl
 ├── premier_league_players_5years_with_rating.csv
 ├── Player_Performance_Prediction.ipynb
 │
-├── templates/
+├── templates
 │   ├── index.html
 │   └── result.html
 │
-├── static/
+├── static
 │   └── style.css
 │
 └── README.md
@@ -109,32 +118,28 @@ Player-Performance-Prediction/
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
 ### 1️⃣ Clone the Repository
 
-```bash
-git clone https://github.com/yourusername/Player-Performance-Prediction.git
+```
+git clone https://github.com/Osamac0d3/Player-Performance-Prediction.git
 cd Player-Performance-Prediction
 ```
 
----
-
 ### 2️⃣ Install Dependencies
 
-```bash
-pip install flask pandas numpy scikit-learn
 ```
-
----
+pip install flask pandas numpy scikit-learn tensorflow
+```
 
 ### 3️⃣ Run the Application
 
-```bash
+```
 python app.py
 ```
 
-Open your browser and go to:
+Open the browser and go to:
 
 ```
 http://127.0.0.1:5000
@@ -142,13 +147,13 @@ http://127.0.0.1:5000
 
 ---
 
-## 📊 Dataset
+# 📊 Dataset
 
 Dataset used in this project:
 
 **Premier League Player Performance Dataset (5 Years)**
 
-Contains features such as:
+The dataset contains player match statistics such as:
 
 * Player name
 * Team
@@ -163,30 +168,31 @@ Contains features such as:
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-* **Python**
-* **Flask**
-* **Pandas**
-* **NumPy**
-* **Scikit-learn**
-* **HTML**
-* **CSS**
-* **Chart.js**
+* Python
+* TensorFlow
+* Keras
+* Pandas
+* NumPy
+* Flask
+* HTML
+* CSS
+* Chart.js
 
 ---
 
-## 🎯 Future Improvements
+# 🎯 Future Improvements
 
 * Player **Radar Charts**
 * **Top 11 lineup prediction**
 * **Team win probability prediction**
-* **Deep Learning models**
+* **Advanced deep learning models**
 * Full **Football Analytics Dashboard**
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Mohd Osama**
 
@@ -194,6 +200,6 @@ GitHub: https://github.com/Osamac0d3
 
 ---
 
-## ⭐ If you like this project
+# ⭐ Support
 
-Give it a **star on GitHub** ⭐ and feel free to contribute!
+If you like this project, consider **starring the repository** ⭐ and contributing to improve the model.
